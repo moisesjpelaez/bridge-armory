@@ -3,14 +3,50 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <script src="instant-games-bridge.js"></script>
     <title>Bomber Journey</title>
+    <style>
+        #banner-container {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 90px;
+        }
+    </style>
 </head>
 <body style="margin: 0; padding: 0;">
     <canvas style="object-fit: contain;  min-width: 100%;  max-width: 100%;  max-height: 100vh;  min-height: 100vh; display: block;" id='khanvas' tabindex='-1'></canvas>
+    <div id="banner-container" style="display: none"></div>
+    <script src="instant-games-bridge.js"></script>
     <script>
-        bridge.initialize().then(function () {
-            console.log("Bridge initialized.");
+        const bridgeOptions = {
+            platforms: {
+                'game_distribution': {
+                    gameId: ''
+                },
+                'vk_play': {
+                    gameId: ''
+                },
+                'telegram': {
+                    adsgramBlockId: ''
+                }
+            }
+        }
+
+        bridge.initialize(bridgeOptions).then(function () {
+            const bannerContainer = document.getElementById("banner-container");
+
+            if (bridge.platform.id === bridge.PLATFORM_ID.CRAZY_GAMES || bridge.platform.id === bridge.PLATFORM_ID.GAME_DISTRIBUTION) {
+                bridge.advertisement.on(bridge.EVENT_NAME.BANNER_STATE_CHANGED, state => {
+                    bannerContainer.style.display = state === 'loading' || state === 'shown' ? 'block' : 'none'
+                })
+            } else {
+                bannerContainer.style.display = 'none'
+            }
+
+            if (bridge.platform.id === bridge.PLATFORM_ID.GAME_DISTRIBUTION) {
+                bridge.advertisement.showInterstitial()
+            }
+
             const khaScriptElement = document.createElement('script');
             khaScriptElement.src = 'kha.js';
             document.body.appendChild(khaScriptElement);
