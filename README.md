@@ -28,6 +28,6 @@ One SDK for cross-platform publishing HTML5 games.
 + [Game Publishing](https://developer.playgama.com/)
 
 ## License
-This project is licensed under the terms of the zlib/libpng License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the terms of the zlib/libpng License. See the [LICENSE](LICENSE.md) file for details.
 
 The playgama-brige.js file is licensed under the terms of the GNU Lesser General Public License v3.0. See the [playgama-bridge_LICENSE](Data/playgama-bridge_LICENSE.txt) file for details.
