@@ -16,18 +16,21 @@
 <body style="margin: 0; padding: 0;">
     <canvas style="object-fit: contain;  min-width: 100%;  max-width: 100%;  max-height: 100vh;  min-height: 100vh; display: block;" id='khanvas' tabindex='-1'></canvas>
     <div id="banner-container" style="display: none"></div>
-    <script src="instant-games-bridge.js"></script>
+    <script src="playgama-bridge.js"></script>
     <script>
         const bridgeOptions = {
             platforms: {
                 'game_distribution': {
-                    gameId: ''
+                    gameId: '{game_distribution_game_id}'
                 },
                 'vk_play': {
-                    gameId: ''
+                    gameId: '{vk_play_game_id}'
                 },
                 'telegram': {
-                    adsgramBlockId: ''
+                    adsgramBlockId: '{adsgram_block_id}'
+                },
+                'y8': {
+                    gameId: '{y8_game_id}'
                 }
             }
         }
