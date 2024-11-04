@@ -14,6 +14,7 @@ One SDK for cross-platform publishing HTML5 games.
 + [VK](https://vk.com)
 + [OK](https://ok.ru)
 + [Absolute Games](https://ag.ru)
++ [Lagged](https://lagged.com)
 + Other [Work In Progress]
 
 ## Plugins for game engines
@@ -21,6 +22,7 @@ One SDK for cross-platform publishing HTML5 games.
 + [Construct 3](https://github.com/playgama/bridge-construct)
 + [Unity](https://github.com/playgama/bridge-unity)
 + [Godot](https://github.com/playgama/bridge-godot)
++ [Godot 4](https://github.com/playgama/bridge-godot-4)
 
 ## Useful links
 + [Documentation](https://wiki.playgama.com/)
