@@ -56,7 +56,7 @@ class Social {
         return Syntax.code('bridge.social.isExternalLinksAllowed');
     }
 
-    public function share(options:Any, callback:Bool->Void) {
+    public function share(?options:Any = null, ?callback:Bool->Void = null) {
         if (shareCallback != null) return;
         shareCallback = callback;
         Syntax.code('bridge.social.share({0}).then({1}).catch({2})', options, onShareThen, onShareCatch);
@@ -76,7 +76,7 @@ class Social {
         }
     }
 
-    public function joinCommunity(options:Any, callback:Bool->Void) {
+    public function joinCommunity(?options:Any = null, ?callback:Bool->Void = null) {
         if (joinCommunityCallback != null) return;
         joinCommunityCallback = callback;
         Syntax.code('bridge.social.joinCommunity({0}).then({1}).catch({2})', options, onJoinCommunityThen, onJoinCommunityCatch);
@@ -96,7 +96,7 @@ class Social {
         }
     }
 
-    public function inviteFriends(options:Any, callback:Bool->Void) {
+    public function inviteFriends(?options:Any = null, ?callback:Bool->Void = null) {
         if (inviteFriendsCallback != null) return;
         inviteFriendsCallback = callback;
         Syntax.code('bridge.social.inviteFriends({0}).then({1}).catch({2})', options, onInviteFriendsThen, onInviteFriendsCatch);
@@ -116,7 +116,7 @@ class Social {
         }
     }
 
-    public function createPost(options:Any, callback:Bool->Void) {
+    public function createPost(?options:Any = null, ?callback:Bool->Void = null) {
         if (createPostCallback != null) return;
         createPostCallback = callback;
         Syntax.code('bridge.social.createPost({0}).then({1}).catch({2})', options, onCreatePostThen, onCreatePostCatch);
@@ -136,7 +136,7 @@ class Social {
         }
     }
 
-    public function addToFavorites(callback:Bool->Void) {
+    public function addToFavorites(?callback:Bool->Void = null) {
         if (addToFavoritesCallback != null) return;
         addToFavoritesCallback = callback;
         Syntax.code('bridge.social.addToFavorites().then({0}).catch({1})', onAddToFavoritesThen, onAddToFavoritesCatch);
@@ -156,7 +156,7 @@ class Social {
         }
     }
 
-    public function addToHomeScreen(callback:Bool->Void) {
+    public function addToHomeScreen(?callback:Bool->Void = null) {
         if (addToHomeScreenCallback != null) return;
         addToHomeScreenCallback = callback;
         Syntax.code('bridge.social.addToHomeScreen().then({0}).catch({1})', onAddToHomeScreenThen, onAddToHomeScreenCatch);
@@ -176,7 +176,7 @@ class Social {
         }
     }
 
-    public function rate(callback:Bool->Void) {
+    public function rate(?callback:Bool->Void = null) {
         if (rateCallback != null) return;
         rateCallback = callback;
         Syntax.code('bridge.social.rate().then({0}).catch({1})', onRateThen, onRateCatch);

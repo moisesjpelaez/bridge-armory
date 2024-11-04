@@ -1,8 +1,13 @@
 package bridge;
 
+import armory.system.Signal;
 import js.Syntax;
 
 class Advertisement {
+    public var bannerStateChanged:Signal = new Signal();
+    public var interstitialStateChanged:Signal = new Signal();
+    public var rewardedStateChanged:Signal = new Signal();
+
     public var minimumDelayBetweenInterstitial(get, null):Int;
     public var isBannerSupported(get, null):Bool;
     public var bannerState(get, null):String;
@@ -63,15 +68,15 @@ class Advertisement {
     }
 
     function onBannerStateChanged(state:String) {
-        Event.send("BannerStateChanged", state);
+        bannerStateChanged.emit(state);
     }
 
     function onInterstitialStateChanged(state:String) {
-        Event.send("InterstitialStateChanged", state);
+        interstitialStateChanged.emit(state);
     }
 
     function onRewardedStateChanged(state:String) {
-        Event.send("RewardedStateChanged", state);
+        rewardedStateChanged.emit(state);
     }
 
     function onCheckAdBlockThen(result:Bool) {

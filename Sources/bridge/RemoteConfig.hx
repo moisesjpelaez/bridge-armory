@@ -15,7 +15,7 @@ class RemoteConfig {
         return Syntax.code('bridge.remoteConfig.isSupported');
     }
 
-    public function get(options:Any, callback:(Bool, Any)->Void) {
+    public function get(?options:Any = null, ?callback:(Bool, Any)->Void = null) {
         if (isGetting || callback == null) return;
         
         isGetting = true;

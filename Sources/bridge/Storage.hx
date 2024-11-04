@@ -28,7 +28,7 @@ class Storage {
         return Syntax.code('bridge.storage.isAvailable({0})', storageType);
     }
 
-    public function get(key:Any, callback:(Bool, Dynamic)->Void, ?storageType:String = null) {
+    public function get(key:Any, ?callback:(Bool, Dynamic)->Void = null, ?storageType:String = null) {
         if (isGetting || callback == null) return;
         isGetting = true;
         getCallback = callback;
@@ -45,7 +45,7 @@ class Storage {
         if (getCallback != null) getCallback(false, null);
     }
 
-    public function set(key:Any, value:Dynamic, callback:Bool->Void, ?storageType:String = null) {
+    public function set(key:Any, value:Dynamic, ?callback:Bool->Void = null, ?storageType:String = null) {
         if (isSetting) return;
         isSetting = true;
         setCallback = callback;
@@ -62,7 +62,7 @@ class Storage {
         if (setCallback != null) setCallback(false);
     }
 
-    public function delete(key:Any, callback:Bool->Void, ?storageType:String = null) {
+    public function delete(key:Any, ?callback:Bool->Void = null, ?storageType:String = null) {
         if (isDeleting) return;
         isDeleting = true;
         deleteCallback = callback;

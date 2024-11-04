@@ -35,7 +35,7 @@ class Player {
         return Syntax.code('bridge.player.photos');
     }
 
-    public function authorize(options:Any, callback:Bool->Void) {
+    public function authorize(?options:Any = null, ?callback:Bool->Void = null) {
         if (authorizeCallback != null) return;
         authorizeCallback = callback;
         Syntax.code("bridge.player.authorize({0}).then({1}).catch({2})", options, onAuthorizeThen, onAuthorizeCatch);

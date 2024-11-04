@@ -1,8 +1,10 @@
 package bridge;
 
+import arm.temp.Signal;
 import js.Syntax;
 
 class Game {
+    public var visibilityStateChanged:Signal = new Signal();
     public var visibilityState(get, null):String;
 
     public function new() {
@@ -14,6 +16,6 @@ class Game {
     }
 
     function onVisibilityStateChanged(state:String) {
-        Event.send('VisibilityStateChanged', state);
+        visibilityStateChanged.emit(state);
     }
 }
