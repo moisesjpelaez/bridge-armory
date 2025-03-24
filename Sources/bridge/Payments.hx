@@ -6,7 +6,7 @@ import kha.FastFloat;
 class Payments {
     public var isSupported(get, null):Bool;
 
-    var purchaseCallback:Bool->Void = null;
+    var purchaseCallback:(Bool, Map<Any, TPurchaseResult>)->Void = null;
     var consumePurchaseCallback:Bool->Void = null;
     var getCatalogCallback:(Bool, Map<Any, TCatalogItem>)->Void = null;
     var getPurchasesCallback:(Bool, Map<Any, TPurchase>)->Void = null;
@@ -19,22 +19,22 @@ class Payments {
         return Syntax.code('bridge.payments.isSupported');
     }
 
-    public function purchase(?options:Any = null, ?callback:Bool->Void = null) {
+    public function purchase(?options:Any = null, ?callback:(Bool, Map<Any, TPurchaseResult>)->Void = null) {
         if (purchaseCallback != null) return;
         purchaseCallback = callback;
         Syntax.code('bridge.payments.purchase({0}).then({1}).catch({2})', options, onPurchaseThen, onPurchaseCatch);
     }
 
-    function onPurchaseThen() {
+    function onPurchaseThen(details:Map<Any, TPurchaseResult>) {
         if (purchaseCallback != null) {
-            purchaseCallback(true);
+            purchaseCallback(true, details);
             purchaseCallback = null;
         }
     }
 
     function onPurchaseCatch(error:String) {
         if (purchaseCallback != null) {
-            purchaseCallback(false);
+            purchaseCallback(false, []);
             purchaseCallback = null;
         }
     }
@@ -54,7 +54,7 @@ class Payments {
 
     function onConsumePurchaseCatch(error:String) {
         if (purchaseCallback != null) {
-            purchaseCallback(false);
+            consumePurchaseCallback(false);
             purchaseCallback = null;
         }
     }
@@ -106,11 +106,18 @@ typedef TCatalogItem = {
     var description:String;
     var imageURI:String;
     var price:FastFloat;
-    var priceValue:FastFloat;
     var priceCurrencyCode:String;
+    var priceCurrencyImage:String;
+    var priceValue:FastFloat;
 }
 
 typedef TPurchase = {
+    var productID:String;
+    var purchaseToken:String;
+}
+
+typedef TPurchaseResult = {
+    var developerPayload:String;
     var productID:String;
     var purchaseToken:String;
 }
