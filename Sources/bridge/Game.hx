@@ -1,6 +1,6 @@
 package bridge;
 
-import arm.temp.Signal;
+import armory.system.Signal;
 import js.Syntax;
 
 class Game {
