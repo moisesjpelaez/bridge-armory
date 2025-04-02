@@ -1,6 +1,5 @@
 package bridge;
 
-import armory.system.Signal;
 import js.Syntax;
 
 class Achievements {
