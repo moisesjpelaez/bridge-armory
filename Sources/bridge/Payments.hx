@@ -19,10 +19,10 @@ class Payments {
         return Syntax.code('bridge.payments.isSupported');
     }
 
-    public function purchase(?options:Any = null, ?callback:(Bool, Map<Any, TPurchaseResult>)->Void = null) {
+    public function purchase(id:String, ?callback:(Bool, Map<Any, TPurchaseResult>)->Void = null) {
         if (purchaseCallback != null) return;
         purchaseCallback = callback;
-        Syntax.code('bridge.payments.purchase({0}).then({1}).catch({2})', options, onPurchaseThen, onPurchaseCatch);
+        Syntax.code('bridge.payments.purchase({0}).then({1}).catch({2})', id, onPurchaseThen, onPurchaseCatch);
     }
 
     function onPurchaseThen(details:Map<Any, TPurchaseResult>) {
@@ -39,10 +39,10 @@ class Payments {
         }
     }
 
-    public function consumePurchase(?options:Any = null, ?callback:Bool->Void = null) {
+    public function consumePurchase(id:String, ?callback:Bool->Void = null) {
         if (consumePurchaseCallback != null) return;
         consumePurchaseCallback = callback;
-        Syntax.code('bridge.payments.consumePurchase({0}).then({1}).catch({2})', options, onConsumePurchaseThen, onConsumePurchaseCatch);
+        Syntax.code('bridge.payments.consumePurchase({0}).then({1}).catch({2})', id, onConsumePurchaseThen, onConsumePurchaseCatch);
     }
 
     function onConsumePurchaseThen() {

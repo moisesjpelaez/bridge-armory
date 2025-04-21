@@ -8,8 +8,12 @@ class Platform {
     public var language(get, null):String;
     public var payload(get, null):String;
     public var tld(get, null):String;
+    public var isGetAllGamesSupported(get, null):Bool;
+    public var isGetGameByIdSupported(get, null):Bool;
 
     var getServerTimeCallback:Int->Void = null;
+    var getAllGamesCallback:Any->Void = null;
+    var getGameByIdCallback:Any->Void = null;
 
     public function new() {
 
@@ -35,6 +39,14 @@ class Platform {
         return Syntax.code('bridge.platform.tld');
     }
 
+    function get_isGetAllGamesSupported():Bool {
+        return Syntax.code('bridge.platform.isGetAllGamesSupported');
+    }
+
+    function get_isGetGameByIdSupported():Bool {
+        return Syntax.code('bridge.platform.isGetGameByIdSupported');
+    }
+
     public function sendMessage(message:String) {
         Syntax.code('bridge.platform.sendMessage({0})', message);
     }
@@ -58,5 +70,31 @@ class Platform {
             getServerTimeCallback(0);
             getServerTimeCallback = null;
         }        
+    }
+
+    public function getAllGames(callback:Any->Void) {
+        if (getAllGamesCallback != null) return;
+        getAllGamesCallback = callback;
+        Syntax.code('bridge.platform.getAllGames().then({0})', onGetAllGamesThen);
+    }
+
+    function onGetAllGamesThen(data:Any) {
+        if (getAllGamesCallback != null) {
+            getAllGamesCallback(data);
+            getAllGamesCallback = null;
+        }
+    }
+
+    public function getGameById(options:String, callback:Any->Void) {
+        if (getGameByIdCallback != null) return;
+        getGameByIdCallback = callback;
+        Syntax.code('bridge.platform.getGameById({0}).then({1})', options, onGetGameById);
+    }
+
+    function onGetGameById(data:Any) {
+        if (getGameByIdCallback != null) {
+            getGameByIdCallback(data);
+            getGameByIdCallback = null;
+        }
     }
 }

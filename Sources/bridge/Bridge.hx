@@ -12,8 +12,4 @@ class Bridge {
     public static var remoteConfig:RemoteConfig = new RemoteConfig();
     public static var social:Social = new Social();
     public static var storage:Storage = new Storage();
-
-    function new() {
-        
-    }
 }
