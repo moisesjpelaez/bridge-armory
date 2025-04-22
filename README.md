@@ -1,11 +1,12 @@
 # Playgama Bridge
-Playgama Bridge for [Armory3D](https://armory3d.org/engine/).
+Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-platform publishing HTML5 games.
 
 ## Installation
 - Create `Subprojects` folder alongside your `.blend` file if it doesn't exists
 - `git clone https://github.com/moisesjpelaez/playgama-bridge-armory.git` in `Subprojects` folder
 
-One SDK for cross-platform publishing HTML5 games.
+## Notes
+- after building for web, locate the `index.html` file in `build_[your_project_name]/html5` folder and put your game's name in the `<title>` tag
 
 ## Supported platforms
 + [Playgama](https://playgama.com)
@@ -39,6 +40,6 @@ One SDK for cross-platform publishing HTML5 games.
 + [Game Publishing](https://developer.playgama.com/)
 
 ## License
-This project is licensed under the terms of the zlib/libpng License. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the terms of the zlib/libpng License. See the [LICENSE](LICENSE.md) file for details. 
 
-The playgama-brige.js file is licensed under the terms of the GNU Lesser General Public License v3.0. See the [playgama-bridge_LICENSE](Data/playgama-bridge_LICENSE) file for details.
+The `playgama-brige.js` file is licensed under the terms of the GNU Lesser General Public License v3.0. See the [playgama-bridge_LICENSE](Data/playgama-bridge_LICENSE) file for details.
