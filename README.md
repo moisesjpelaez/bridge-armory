@@ -9,7 +9,7 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 - after building for web, locate the `index.html` file in `build_[your_project_name]/html5` folder and put your game's name in the `<title>` tag
 
 ## Supported platforms
-+ [Playgama](https://playgama.com)
++ [Playgama](https://playgama.com/)
 + [Game Distribution](https://gamedistribution.com)
 + [Crazy Games](https://crazygames.com)
 + [Yandex Games](https://yandex.com/games)
@@ -17,11 +17,13 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Wortal](https://wortal.ai)
 + [PlayDeck](https://playdeck.io)
 + [Telegram](https://core.telegram.org/bots/webapps)
-+ [VK Play](https://vkplay.ru/)
 + [VK](https://vk.com)
 + [OK](https://ok.ru)
 + [Absolute Games](https://ag.ru)
 + [Lagged](https://lagged.com)
++ [Facebook](https://www.facebook.com/games/instantgames)
++ [Poki](https://poki.com/)
++ [MSN](https://www.msn.com/en-us/play)
 + Other [Work In Progress]
 
 ## Plugins for game engines
