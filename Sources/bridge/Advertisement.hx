@@ -13,6 +13,7 @@ class Advertisement {
     public var bannerState(get, null):String;
     public var interstitialState(get, null):String;
     public var rewardedState(get, null):String;
+    public var rewardedPlacement(get, null):String;
 
     var checkAdBlockCallback:Bool->Void = null;
 
@@ -46,20 +47,24 @@ class Advertisement {
         return Syntax.code('bridge.advertisement.rewardedState');
     }
 
-    public function showBanner(options:Any) {
-        Syntax.code('bridge.advertisement.showBanner({0})', options);
+    function get_rewardedPlacement():String {
+        return Syntax.code('bridge.advertisement.rewardedPlacement');
+    }
+
+    public function showBanner(position:String, placement:String) {
+        Syntax.code('bridge.advertisement.showBanner({0}, {1})', position, placement);
     }
 
     public function hideBanner() {
         Syntax.code('bridge.advertisement.hideBanner()');
     }
 
-    public function showInterstitial() {
-        Syntax.code('bridge.advertisement.showInterstitial()');
+    public function showInterstitial(?placement:String) {
+        Syntax.code('bridge.advertisement.showInterstitial({0})', placement);
     }
 
-    public function showRewarded() {
-        Syntax.code('bridge.advertisement.showRewarded()');
+    public function showRewarded(?placement:String) {
+        Syntax.code('bridge.advertisement.showRewarded({0})', placement);
     }
 
     public function checkAdBlock(callback:Bool->Void) {
