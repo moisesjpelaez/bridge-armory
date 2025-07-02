@@ -10,30 +10,7 @@
     <canvas style="object-fit: contain; min-width: 100%; max-width: 100%; max-height: 100vh; min-height: 100vh; display: block;" id='khanvas' tabindex='-1'></canvas>
     <script type="text/javascript" src="playgama-bridge.js"></script>
     <script>
-        const bridgeOptions = {
-            platforms: {
-                'game_distribution': {
-                    gameId: '{game_distribution_game_id}'
-                },
-                'telegram': {
-                    adsgramBlockId: '{adsgram_block_id}'
-                },
-                'y8': {
-                    gameId: '{y8_game_id}',
-                    channelId: '{y8_channel_id}',
-                    adsenseId: '{y8_adsense_id}'
-                },
-                'lagged': {
-                    devId: '{lagged_dev_id}',
-                    publisherId: '{lagged_publisher_id}'
-                },
-                'facebook': {
-                    placementId: '{facebook_placement_id}'
-                }
-            }
-        }
-
-        bridge.initialize(bridgeOptions).then(function () {
+        bridge.initialize().then(function () {
             const khaScriptElement = document.createElement('script');
             khaScriptElement.src = 'kha.js';
             document.body.appendChild(khaScriptElement);
