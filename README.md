@@ -23,6 +23,7 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Facebook](https://www.facebook.com/games/instantgames)
 + [Poki](https://poki.com/)
 + [MSN](https://www.msn.com/en-us/play)
++ [Discord](https://discord.com/gaming)
 + Other [Work In Progress]
 
 ## Plugins for game engines
@@ -34,6 +35,7 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Game Maker](https://github.com/playgama/bridge-gamemaker)
 + [Defold](https://github.com/playgama/bridge-defold)
 + [GDevelop](https://github.com/playgama/bridge-gdevelop)
++ [Cocos Creator](https://github.com/Playgama/bridge-cocos-creator)
 
 ## Useful links
 + [Documentation](https://wiki.playgama.com/)
