@@ -43,6 +43,6 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Game Publishing](https://developer.playgama.com/)
 
 ## License
-This project is licensed under the terms of the zlib/libpng License. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the terms of the zlib License. See the [LICENSE](LICENSE.md) file for details.
 
 The `playgama-brige.js` file is licensed under the terms of the GNU Lesser General Public License v3.0. See the [playgama-bridge_LICENSE](Data/playgama-bridge_LICENSE) file for details.
