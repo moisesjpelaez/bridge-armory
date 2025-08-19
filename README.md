@@ -3,7 +3,7 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 
 ## Installation
 - Create `Subprojects` folder alongside your `.blend` file if it doesn't exists
-- `git clone https://github.com/moisesjpelaez/bridge-armory.git` in `Subprojects` folder
+- `git clone https://github.com/moisesjpelaez/bridge_armory.git` in `Subprojects` folder
 
 ## Notes
 - after building for html5, locate the `index.html` file in `build_[your_project_name]/html5` folder and put your game's name in the `<title>` tag
@@ -24,6 +24,7 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Poki](https://poki.com/)
 + [MSN](https://www.msn.com/en-us/play)
 + [Discord](https://discord.com/gaming)
++ [BitQuest](https://t.me/BitquestGamesBot/start)
 + Other [Work In Progress]
 
 ## Plugins for game engines
@@ -32,10 +33,11 @@ Playgama Bridge for [Armory3D](https://armory3d.org/engine/). One SDK for cross-
 + [Unity](https://github.com/playgama/bridge-unity)
 + [Godot 3](https://github.com/playgama/bridge-godot)
 + [Godot 4](https://github.com/playgama/bridge-godot-4)
-+ [Game Maker](https://github.com/playgama/bridge-gamemaker)
++ [GameMaker](https://github.com/playgama/bridge-gamemaker)
 + [Defold](https://github.com/playgama/bridge-defold)
 + [GDevelop](https://github.com/playgama/bridge-gdevelop)
-+ [Cocos Creator](https://github.com/Playgama/bridge-cocos-creator)
++ [Cocos Creator](https://github.com/playgama/bridge-cocos-creator)
++ [Scratch](https://github.com/playgama/bridge-scratch)
 
 ## Useful links
 + [Documentation](https://wiki.playgama.com/)

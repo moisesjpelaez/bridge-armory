@@ -11,7 +11,9 @@ class Advertisement {
     public var minimumDelayBetweenInterstitial(get, null): Int;
     public var isBannerSupported(get, null): Bool;
     public var bannerState(get, null): String;
+    public var isInterstitialSupported(get, null): Bool;
     public var interstitialState(get, null): String;
+    public var isRewardedSupported(get, null): Bool;
     public var rewardedState(get, null): String;
     public var rewardedPlacement(get, null): String;
 
@@ -39,8 +41,16 @@ class Advertisement {
         return Syntax.code('bridge.advertisement.bannerState');
     }
 
+    function get_isInterstitialSupported(): Bool {
+        return Syntax.code('bridge.advertisement.isInterstitialSupported');
+    }
+
     function get_interstitialState(): String {
         return Syntax.code('bridge.advertisement.interstitialState');
+    }
+
+    function get_isRewardedSupported(): Bool {
+        return Syntax.code('bridge.advertisement.isRewardedSupported');
     }
 
     function get_rewardedState(): String {

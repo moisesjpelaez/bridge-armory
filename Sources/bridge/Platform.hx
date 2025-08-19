@@ -1,13 +1,18 @@
 package bridge;
 
+import armory.system.Signal;
 import js.Syntax;
 
 class Platform {
+    public var audioStateChanged: Signal = new Signal();
+    public var pauseStateChanged: Signal = new Signal();
+
     public var id(get, null): String;
     public var sdk(get, null): String;
     public var language(get, null): String;
     public var payload(get, null): String;
     public var tld(get, null): String;
+    public var isAudioEnabled(get, null): Bool;
     public var isGetAllGamesSupported(get, null): Bool;
     public var isGetGameByIdSupported(get, null): Bool;
 
@@ -16,7 +21,8 @@ class Platform {
     var getGameByIdCallback: Any->Void = null;
 
     public function new() {
-
+        Syntax.code('bridge.platform.on(bridge.EVENT_NAME.AUDIO_STATE_CHANGED, {0})', onAudioStateChanged);
+        Syntax.code('bridge.platform.on(bridge.EVENT_NAME.PAUSE_STATE_CHANGED, {0})', onPauseStateChanged);
     }
 
     function get_id(): String {
@@ -37,6 +43,10 @@ class Platform {
 
     function get_tld(): Null<String> {
         return Syntax.code('bridge.platform.tld');
+    }
+
+    function get_isAudioEnabled(): Bool {
+        return Syntax.code('bridge.platform.isAudioEnabled');
     }
 
     function get_isGetAllGamesSupported(): Bool {
@@ -96,5 +106,13 @@ class Platform {
             getGameByIdCallback(data);
             getGameByIdCallback = null;
         }
+    }
+
+    function onAudioStateChanged(isEnabled: Bool) {
+        audioStateChanged.emit(isEnabled);
+    }
+
+    function onPauseStateChanged(isPaused: Bool) {
+        pauseStateChanged.emit(isPaused);
     }
 }
